@@ -22,7 +22,7 @@ class TweetTableViewCell: UITableViewCell {
         return image
     }()
 
-    private let displayName: UILabel = {
+    private let displayNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 15, weight: .bold)
@@ -91,70 +91,47 @@ class TweetTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(avatarImageView)
-        contentView.addSubview(displayName)
+        contentView.addSubview(displayNameLabel)
         contentView.addSubview(usernameLabel)
         contentView.addSubview(tweetTextLabel)
         contentView.addSubview(likeButton)
         contentView.addSubview(replyButton)
         contentView.addSubview(retweetButton)
         contentView.addSubview(shareButton)
-        configureConstrains()
+        configureConstraints()
         configureButtons()
     }
 
-    private func configureConstrains() {
-        let avatarImageConstants = [
+    private func configureConstraints() {
+        NSLayoutConstraint.activate([
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             avatarImageView.widthAnchor.constraint(equalToConstant: 50),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 50)
-        ]
+            avatarImageView.heightAnchor.constraint(equalToConstant: 50),
 
-        let displayNameConstants = [
-            displayName.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
-            displayName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10)
-        ]
+            displayNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
+            displayNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
 
-        let userNameConstants = [
-            usernameLabel.leadingAnchor.constraint(equalTo: displayName.trailingAnchor, constant: 5),
-            usernameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15)
-        ]
+            usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.trailingAnchor, constant: 5),
+            usernameLabel.centerYAnchor.constraint(equalTo: displayNameLabel.centerYAnchor),
 
-        let tweetTextConstants = [
-            tweetTextLabel.leadingAnchor.constraint(equalTo: displayName.leadingAnchor),
-            tweetTextLabel.topAnchor.constraint(equalTo: displayName.bottomAnchor, constant: 10),
-            tweetTextLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
-        ]
+            tweetTextLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+            tweetTextLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 5),
+            tweetTextLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
 
-        let replyButtonConstants = [
             replyButton.leadingAnchor.constraint(equalTo: tweetTextLabel.leadingAnchor),
             replyButton.topAnchor.constraint(equalTo: tweetTextLabel.bottomAnchor, constant: 10),
-            replyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
-        ]
+            replyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
 
-        let retweetButtonConstants = [
-            retweetButton.leadingAnchor.constraint(equalTo: replyButton.trailingAnchor, constant: 50),
-            retweetButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor)
-        ]
+            retweetButton.leadingAnchor.constraint(equalTo: replyButton.trailingAnchor, constant: 30),
+            retweetButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor),
 
-        let likeButtonConstants = [
-            likeButton.leadingAnchor.constraint(equalTo: retweetButton.trailingAnchor, constant: 50),
-            likeButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor)
-        ]
+            likeButton.leadingAnchor.constraint(equalTo: retweetButton.trailingAnchor, constant: 30),
+            likeButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor),
 
-        let shareButtonConstants = [
-            shareButton.leadingAnchor.constraint(equalTo: likeButton.trailingAnchor, constant: 50),
+            shareButton.leadingAnchor.constraint(equalTo: likeButton.trailingAnchor, constant: 30),
             shareButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor)
-        ]
-
-        NSLayoutConstraint.activate(avatarImageConstants)
-        NSLayoutConstraint.activate(displayNameConstants)
-        NSLayoutConstraint.activate(userNameConstants)
-        NSLayoutConstraint.activate(tweetTextConstants)
-        NSLayoutConstraint.activate(replyButtonConstants)
-        NSLayoutConstraint.activate(retweetButtonConstants)
-        NSLayoutConstraint.activate(likeButtonConstants)
-        NSLayoutConstraint.activate(shareButtonConstants)
+        ])
     }
 
     private func configureButtons() {

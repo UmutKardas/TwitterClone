@@ -29,6 +29,14 @@ class HomeViewController: UIViewController {
     }
 
     private func configureConstrains() {}
+
+    private func configureNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .plain, target: self, action: #selector(didTapProfile))
+    }
+
+    @objc func didTapProfile() {
+        
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
