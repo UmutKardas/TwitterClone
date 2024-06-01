@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
+        // navigationController?.navigationBar.isHidden = true
         view.addSubview(timelineTableView)
         timelineTableView.delegate = self
         timelineTableView.dataSource = self
@@ -26,16 +26,31 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         timelineTableView.frame = view.frame
         configureConstrains()
+        configureNavigationBar()
     }
 
     private func configureConstrains() {}
 
     private func configureNavigationBar() {
+        navigationItem.titleView = makeTitleView()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .plain, target: self, action: #selector(didTapProfile))
     }
 
+    private func makeTitleView() -> UIView {
+        let sizeValue = 40
+        let rect = CGRect(x: 0, y: 0, width: sizeValue, height: sizeValue)
+        let logoView = UIImageView()
+        logoView.contentMode = .scaleAspectFill
+        logoView.frame = rect
+        logoView.image = UIImage(named: "TwitterLogo")
+
+        let titleView = UIView(frame: rect)
+        titleView.addSubview(logoView)
+        return titleView
+    }
+
     @objc func didTapProfile() {
-        
+        navigationController?.pushViewController(ProfileViewController(), animated: true)
     }
 }
 
