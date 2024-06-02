@@ -122,6 +122,9 @@ class ProfileTableViewHeader: UIView {
         return label
     }()
 
+    private var sectionIndex: Int = 0
+    private let sectionButtonDictionary: [String: Int] = ["Tweets": 0, "Tweets & Replies": 1, "Media": 2, "Likes": 3]
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(profileImage)
@@ -137,6 +140,7 @@ class ProfileTableViewHeader: UIView {
         addSubview(followingCountLabel)
         addSubview(sectionStack)
         configureConstraints()
+        configureStackButton()
     }
 
     private func configureConstraints() {
@@ -183,6 +187,28 @@ class ProfileTableViewHeader: UIView {
             sectionStack.topAnchor.constraint(equalTo: followingCountLabel.bottomAnchor, constant: 5),
             sectionStack.heightAnchor.constraint(equalToConstant: 35)
         ])
+    }
+
+    private func configureStackButton() {
+        setButtonColors()
+        for (_, button) in sectionStack.arrangedSubviews.enumerated() {
+            guard let button = button as? UIButton else { return }
+            button.addTarget(self, action: #selector(didTapTab(_:)), for: .touchUpInside)
+        }
+    }
+
+    @objc private func didTapTab(_ sender: UIButton) {
+        guard let title = sender.titleLabel?.text, let index = sectionButtonDictionary[title] else { return }
+        sectionIndex = index
+        setButtonColors()
+    }
+
+    private func setButtonColors() {
+        for (index, subview) in sectionStack.arrangedSubviews.enumerated() {
+            if let button = subview as? UIButton {
+                button.tintColor = sectionIndex == index ? .label : .secondaryLabel
+            }
+        }
     }
 
     @available(*, unavailable)
