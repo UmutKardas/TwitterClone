@@ -5,6 +5,7 @@
 //  Created by Hüseyin Umut Kardaş on 29.05.2024.
 //
 
+import FirebaseAuth
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -16,7 +17,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // navigationController?.navigationBar.isHidden = true
         view.addSubview(timelineTableView)
         timelineTableView.delegate = self
         timelineTableView.dataSource = self
@@ -27,9 +27,18 @@ class HomeViewController: UIViewController {
         timelineTableView.frame = view.frame
         configureConstrains()
         configureNavigationBar()
+        handleAuthentication()
     }
 
     private func configureConstrains() {}
+
+    private func handleAuthentication() {
+        if Auth.auth().currentUser != nil { return }
+
+        let onboardingView = UINavigationController(rootViewController: OnboardingViewController())
+        onboardingView.modalPresentationStyle = .fullScreen
+        present(onboardingView, animated: true)
+    }
 
     private func configureNavigationBar() {
         navigationItem.titleView = makeTitleView()
