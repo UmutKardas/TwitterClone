@@ -12,5 +12,7 @@ final class RegisterViewModel: ObservableObject {
     @Published var password: String?
     @Published var error: String?
 
-    func createUser() {}
+    func createUser() {
+        
+    }
 }

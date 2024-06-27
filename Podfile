@@ -4,10 +4,10 @@
 target 'TwitterClone' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+pod 'CombineFirebase/Firestore'
+pod 'CombineFirebase/Storage'
+pod 'CombineFirebase/Auth'
 pod 'FirebaseAnalytics'
-pod 'FirebaseAuth'
-pod 'FirebaseFirestore'
-pod 'FirebaseStorage'
 pod 'SDWebImage'
   # Pods for TwitterClone
 

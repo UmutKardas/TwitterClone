@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Codable, Hashable {
+struct AppUser: Codable, Hashable {
     var id: UUID = .init()
     var username: String
     var displayName: String

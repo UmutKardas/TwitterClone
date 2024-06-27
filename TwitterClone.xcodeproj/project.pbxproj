@@ -23,7 +23,8 @@
 		4C3E465D2C2A091500F813E9 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E465C2C2A091500F813E9 /* RegisterViewModel.swift */; };
 		4C3E76AC2C0B815D00A8D02E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E76AB2C0B815D00A8D02E /* ProfileViewController.swift */; };
 		4C3E76B02C0B85FD00A8D02E /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3E76AF2C0B85FD00A8D02E /* ProfileTableViewHeader.swift */; };
-		4C79C9462C0CC73300DB755B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79C9452C0CC73300DB755B /* User.swift */; };
+		4C70ECEE2C2C8ED7002FF802 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C70ECED2C2C8ED7002FF802 /* AuthManager.swift */; };
+		4C79C9462C0CC73300DB755B /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C79C9452C0CC73300DB755B /* AppUser.swift */; };
 		4C813C862C0D089C00B6496D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C813C852C0D089C00B6496D /* OnboardingViewController.swift */; };
 		4C86C30C2C28989D00D2A209 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C86C30B2C28989D00D2A209 /* RegisterViewController.swift */; };
 		4C86C30E2C2898AD00D2A209 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C86C30D2C2898AD00D2A209 /* LoginViewController.swift */; };
@@ -50,7 +51,8 @@
 		4C3E465C2C2A091500F813E9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		4C3E76AB2C0B815D00A8D02E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4C3E76AF2C0B85FD00A8D02E /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
-		4C79C9452C0CC73300DB755B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4C70ECED2C2C8ED7002FF802 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		4C79C9452C0CC73300DB755B /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		4C813C852C0D089C00B6496D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4C86C30B2C28989D00D2A209 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4C86C30D2C2898AD00D2A209 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		4C1A056B2C079D55002D9625 /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				4C70ECEC2C2C8E9B002FF802 /* Networking */,
 				4C1A056C2C079D55002D9625 /* AppDelegate.swift */,
 				4C1A056E2C079D55002D9625 /* SceneDelegate.swift */,
 				4C3E769D2C0B7F1F00A8D02E /* Tab Bar */,
@@ -267,10 +270,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4C70ECEC2C2C8E9B002FF802 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4C70ECED2C2C8ED7002FF802 /* AuthManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		4C79C9442C0CC71E00DB755B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4C79C9452C0CC73300DB755B /* User.swift */,
+				4C79C9452C0CC73300DB755B /* AppUser.swift */,
 				4C2ACFB92C0CF9E500E3B43C /* Tweet.swift */,
 			);
 			path = Models;
@@ -440,7 +451,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C79C9462C0CC73300DB755B /* User.swift in Sources */,
+				4C79C9462C0CC73300DB755B /* AppUser.swift in Sources */,
+				4C70ECEE2C2C8ED7002FF802 /* AuthManager.swift in Sources */,
 				4C1A05872C07AF48002D9625 /* SearchViewController.swift in Sources */,
 				4C1A05832C07AF29002D9625 /* MainTabBarViewController.swift in Sources */,
 				4C3E76B02C0B85FD00A8D02E /* ProfileTableViewHeader.swift in Sources */,

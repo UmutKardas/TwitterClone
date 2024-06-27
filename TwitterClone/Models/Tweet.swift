@@ -9,10 +9,10 @@ import Foundation
 
 struct Tweet: Codable {
     var id: UUID = .init()
-    var author: User
+    var author: AppUser
     var authorID: String
     var content: String
     var likesValue: Int
     var likes: [String]
-    var comments: [User: String]
+    var comments: [AppUser: String]
 }
