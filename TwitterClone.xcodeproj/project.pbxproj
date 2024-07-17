@@ -28,6 +28,9 @@
 		4C813C862C0D089C00B6496D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C813C852C0D089C00B6496D /* OnboardingViewController.swift */; };
 		4C86C30C2C28989D00D2A209 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C86C30B2C28989D00D2A209 /* RegisterViewController.swift */; };
 		4C86C30E2C2898AD00D2A209 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C86C30D2C2898AD00D2A209 /* LoginViewController.swift */; };
+		8AA192B32C470D310088C587 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA192B22C470D310088C587 /* LoginViewModel.swift */; };
+		8AA192B62C47115C0088C587 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA192B52C47115C0088C587 /* UIViewController+Extensions.swift */; };
+		8AA689452C485D80003472BF /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA689442C485D80003472BF /* DatabaseManager.swift */; };
 		FC2629804E00D7F0D5D312AE /* Pods_TwitterClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCF207E726AB004924CF4F8 /* Pods_TwitterClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		4C86C30B2C28989D00D2A209 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4C86C30D2C2898AD00D2A209 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4D2EDCEE4AC7562A4512B702 /* Pods-TwitterClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClone.debug.xcconfig"; path = "Target Support Files/Pods-TwitterClone/Pods-TwitterClone.debug.xcconfig"; sourceTree = "<group>"; };
+		8AA192B22C470D310088C587 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8AA192B52C47115C0088C587 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		8AA689442C485D80003472BF /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		F7B6DDDA671F832E656ADA8F /* Pods-TwitterClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClone.release.xcconfig"; path = "Target Support Files/Pods-TwitterClone/Pods-TwitterClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,20 +116,13 @@
 		4C1A056B2C079D55002D9625 /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
-				4C70ECEC2C2C8E9B002FF802 /* Networking */,
 				4C1A056C2C079D55002D9625 /* AppDelegate.swift */,
 				4C1A056E2C079D55002D9625 /* SceneDelegate.swift */,
-				4C3E769D2C0B7F1F00A8D02E /* Tab Bar */,
-				4C3E769C2C0B7F0200A8D02E /* Home */,
-				4C3E769E2C0B7F3800A8D02E /* Search */,
-				4C3E769F2C0B7F4900A8D02E /* Notifications */,
-				4C3E76A02C0B7F6200A8D02E /* Direct Messages */,
-				4C3E76A92C0B802500A8D02E /* Profile */,
-				4C79C9442C0CC71E00DB755B /* Models */,
+				8AA192B02C4709020088C587 /* Core */,
+				4C70ECEC2C2C8E9B002FF802 /* Networking */,
+				8AA192B42C47110B0088C587 /* Extension */,
 				4C3E76A82C0B7FEF00A8D02E /* Resources */,
-				4C813C802C0D067500B6496D /* Onboarding */,
-				4C813C822C0D068F00B6496D /* Register */,
-				4C813C812C0D068400B6496D /* Login */,
+				4C79C9442C0CC71E00DB755B /* Models */,
 				4C1A05772C079D56002D9625 /* LaunchScreen.storyboard */,
 				4C1A057A2C079D56002D9625 /* Info.plist */,
 				4C2ACFBB2C0CFF7700E3B43C /* GoogleService-Info.plist */,
@@ -149,12 +148,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		4C3E769D2C0B7F1F00A8D02E /* Tab Bar */ = {
+		4C3E769D2C0B7F1F00A8D02E /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				4C3E76A42C0B7FAF00A8D02E /* Controllers */,
 			);
-			path = "Tab Bar";
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		4C3E769E2C0B7F3800A8D02E /* Search */ = {
@@ -173,12 +172,12 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		4C3E76A02C0B7F6200A8D02E /* Direct Messages */ = {
+		4C3E76A02C0B7F6200A8D02E /* DirectMessages */ = {
 			isa = PBXGroup;
 			children = (
 				4C3E76A72C0B7FD500A8D02E /* Controllers */,
 			);
-			path = "Direct Messages";
+			path = DirectMessages;
 			sourceTree = "<group>";
 		};
 		4C3E76A12C0B7F7D00A8D02E /* View */ = {
@@ -274,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				4C70ECED2C2C8ED7002FF802 /* AuthManager.swift */,
+				8AA689442C485D80003472BF /* DatabaseManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -298,6 +298,7 @@
 		4C813C812C0D068400B6496D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				8AA192B12C470D060088C587 /* ViewModel */,
 				4C86C3092C28987100D2A209 /* Controller */,
 			);
 			path = Login;
@@ -334,6 +335,38 @@
 				4C86C30B2C28989D00D2A209 /* RegisterViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8AA192B02C4709020088C587 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4C3E769D2C0B7F1F00A8D02E /* TabBar */,
+				4C3E769C2C0B7F0200A8D02E /* Home */,
+				4C3E769E2C0B7F3800A8D02E /* Search */,
+				4C3E769F2C0B7F4900A8D02E /* Notifications */,
+				4C3E76A02C0B7F6200A8D02E /* DirectMessages */,
+				4C3E76A92C0B802500A8D02E /* Profile */,
+				4C813C802C0D067500B6496D /* Onboarding */,
+				4C813C822C0D068F00B6496D /* Register */,
+				4C813C812C0D068400B6496D /* Login */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8AA192B12C470D060088C587 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8AA192B22C470D310088C587 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8AA192B42C47110B0088C587 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8AA192B52C47115C0088C587 /* UIViewController+Extensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,12 +496,15 @@
 				4C1A05892C07AF58002D9625 /* NotificationsViewController.swift in Sources */,
 				4C3E465D2C2A091500F813E9 /* RegisterViewModel.swift in Sources */,
 				4C1A056F2C079D55002D9625 /* SceneDelegate.swift in Sources */,
+				8AA192B62C47115C0088C587 /* UIViewController+Extensions.swift in Sources */,
 				4C1A05852C07AF37002D9625 /* HomeViewController.swift in Sources */,
 				4C1A058B2C07AF6A002D9625 /* DirectMessagesViewController.swift in Sources */,
 				4C86C30E2C2898AD00D2A209 /* LoginViewController.swift in Sources */,
 				4C813C862C0D089C00B6496D /* OnboardingViewController.swift in Sources */,
 				4C1A058E2C07B52D002D9625 /* TweetTableViewCell.swift in Sources */,
+				8AA192B32C470D310088C587 /* LoginViewModel.swift in Sources */,
 				4C1A05912C07B935002D9625 /* TweetTableViewCellDelegate.swift in Sources */,
+				8AA689452C485D80003472BF /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

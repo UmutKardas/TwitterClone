@@ -14,6 +14,7 @@ final class RegisterViewModel: ObservableObject {
     @Published var password: String?
     @Published var error: String?
     @Published var user: User?
+    @Published var successAction: (() -> Void)?
 
     private var subscriptions = Set<AnyCancellable>()
 
@@ -26,8 +27,19 @@ final class RegisterViewModel: ObservableObject {
                     self?.error = error.localizedDescription
                 }
             } receiveValue: { [weak self] user in
-                self?.user = user
+                self?.recordUser(user: user)
             }
             .store(in: &subscriptions)
+    }
+
+    func recordUser(user: User) {
+        DatabaseManager.shared.collectionUsers(add: user).sink { [weak self] completion in
+            if case .failure(let error) = completion {
+                self?.error = error.localizedDescription
+            }
+        } receiveValue: { state in
+            print("Adding user record to database: \(state)")
+            self.successAction?()
+        }.store(in: &subscriptions)
     }
 }

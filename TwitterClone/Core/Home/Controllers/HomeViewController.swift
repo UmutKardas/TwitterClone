@@ -33,11 +33,13 @@ class HomeViewController: UIViewController {
     private func configureConstrains() {}
 
     private func handleAuthentication() {
-        if Auth.auth().currentUser != nil { return }
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {}
 
-        let onboardingView = UINavigationController(rootViewController: OnboardingViewController())
-        onboardingView.modalPresentationStyle = .fullScreen
-        present(onboardingView, animated: true)
+        if Auth.auth().currentUser != nil { return }
+        presentNavigation(viewController: OnboardingViewController(), presentationStyle: .fullScreen)
     }
 
     private func configureNavigationBar() {
