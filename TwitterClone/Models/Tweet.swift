@@ -14,5 +14,4 @@ struct Tweet: Codable {
     var content: String
     var likesValue: Int
     var likes: [String]
-    var comments: [AppUser: String]
 }

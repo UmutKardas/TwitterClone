@@ -8,7 +8,7 @@
 import Firebase
 import Foundation
 
-struct AppUser: Codable, Hashable {
+struct AppUser: Codable {
     let id: String
     var username: String = ""
     var displayName: String = ""
@@ -17,8 +17,12 @@ struct AppUser: Codable, Hashable {
     var avatarData: String = ""
     var fallowerValue: Int = 0
     var fallowingValue: Int = 0
+    var isOnboarded: Bool = false
+    var fallowerIds: [String] = .init()
+    var fallowingIds: [String] = .init()
 
     init(from user: User) {
         self.id = user.uid
     }
+
 }

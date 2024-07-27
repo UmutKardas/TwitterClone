@@ -41,7 +41,7 @@ class ProfileTableViewHeader: UIView {
         image.backgroundColor = .blue
         image.contentMode = .scaleAspectFill
         image.layer.masksToBounds = true
-        image.layer.cornerRadius = 20
+        image.layer.cornerRadius = 25
         return image
     }()
 

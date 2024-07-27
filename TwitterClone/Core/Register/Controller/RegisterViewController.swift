@@ -65,7 +65,7 @@ class RegisterViewController: UIViewController {
     }
 
     private func setupTargets() {
-        viewModel.successAction = { [weak self] in self?.presentNavigation(viewController: HomeViewController(), presentationStyle: .fullScreen) }
+        viewModel.successAction = { [weak self] in self?.presentNavigation(viewController: ProfileFormViewController(), presentationStyle: .fullScreen) }
         emailTextField.addTarget(self, action: #selector(didChangeEmailValue), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(didChangePasswordValue), for: .editingChanged)
         createAccountButton.addTarget(self, action: #selector(didTapCreateAccount), for: .touchUpInside)
