@@ -35,6 +35,14 @@ class DatabaseManager {
         }.eraseToAnyPublisher()
     }
 
+    func collectionUser(search text: String) -> AnyPublisher<[AppUser], Error> {
+        return database.collection(usersPath).whereField("username", isEqualTo: text).getDocuments().tryMap { snapshots in
+            try snapshots.documents.map { snapshot in
+                try snapshot.data(as: AppUser.self)
+            }
+        }.eraseToAnyPublisher()
+    }
+
     func collectionTweets(getTimeLine userIds: [String]) -> AnyPublisher<[Tweet], Error> {
         let publishers = userIds.map { userID in
             database.collection(tweetPath).whereField("author.id", isEqualTo: userID).getDocuments().tryMap { snapshots in
@@ -45,6 +53,10 @@ class DatabaseManager {
         }
 
         return Publishers.MergeMany(publishers).collect().map { $0.flatMap { $0 }}.eraseToAnyPublisher()
+    }
+
+    func collectionTweets(add tweet: Tweet) -> AnyPublisher<Bool, Error> {
+        return database.collection(tweetPath).document(tweet.id.uuidString).setData(from: tweet).map { _ in true }.eraseToAnyPublisher()
     }
 
     func collectionTweets(getTweets userId: String) -> AnyPublisher<[Tweet], Error> {

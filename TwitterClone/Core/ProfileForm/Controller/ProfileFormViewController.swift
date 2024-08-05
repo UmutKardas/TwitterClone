@@ -183,8 +183,20 @@ class ProfileFormViewController: UIViewController {
 
 extension ProfileFormViewController: UITextViewDelegate, UITextFieldDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        if textView != biographyTextField { return }
+        if biographyTextField != biographyTextField { return }
         viewModel.biography = biographyTextField.text
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        guard biographyTextField.text == "What's happening?" else { return }
+        biographyTextField.text = ""
+        biographyTextField.textColor = .black
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        guard biographyTextField.text.isEmpty else { return }
+        biographyTextField.text = "What's happening?"
+        biographyTextField.textColor = .lightGray
     }
 }
 

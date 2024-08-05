@@ -5,6 +5,7 @@
 //  Created by Hüseyin Umut Kardaş on 1.06.2024.
 //
 
+import SDWebImage
 import UIKit
 
 class ProfileTableViewHeader: UIView {
@@ -30,7 +31,7 @@ class ProfileTableViewHeader: UIView {
     private let profileImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.backgroundColor = .yellow
+        image.backgroundColor = .gray
         image.contentMode = .scaleAspectFill
         return image
     }()
@@ -49,7 +50,6 @@ class ProfileTableViewHeader: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 25)
-        label.text = "Umut Kardas"
         return label
     }()
 
@@ -58,7 +58,6 @@ class ProfileTableViewHeader: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 15)
         label.textColor = .systemGray
-        label.text = "@umtkardas"
         return label
     }()
 
@@ -66,7 +65,6 @@ class ProfileTableViewHeader: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 15)
-        label.text = "I am iOS developer."
         return label
     }()
 
@@ -80,7 +78,6 @@ class ProfileTableViewHeader: UIView {
     private let joinDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Joined April 2024"
         label.font = .systemFont(ofSize: 15)
         label.textColor = .systemGray
         return label
@@ -89,7 +86,6 @@ class ProfileTableViewHeader: UIView {
     private let followerCountLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "300"
         label.textColor = .label
         label.font = .systemFont(ofSize: 13, weight: .bold)
         return label
@@ -98,8 +94,8 @@ class ProfileTableViewHeader: UIView {
     private let followerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Fallower"
         label.textColor = .secondaryLabel
+        label.text = "Follower"
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
@@ -116,7 +112,7 @@ class ProfileTableViewHeader: UIView {
     private let followingLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Fallowing"
+        label.text = "Following"
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
@@ -124,6 +120,7 @@ class ProfileTableViewHeader: UIView {
 
     private var sectionIndex: Int = 0
     private let sectionButtonDictionary: [String: Int] = ["Tweets": 0, "Tweets & Replies": 1, "Media": 2, "Likes": 3]
+    private let viewModel = ProfileViewModel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -141,6 +138,16 @@ class ProfileTableViewHeader: UIView {
         addSubview(sectionStack)
         configureConstraints()
         configureStackButton()
+    }
+
+    func configure(with user: AppUser) {
+        displayNameLabel.text = user.displayName
+        usernameLabel.text = "@\(user.username)"
+        biographyLabel.text = user.biography
+        joinDateLabel.text = "Joined \(user.createdDate)"
+        followerCountLabel.text = "\(user.fallowerValue)"
+        followingCountLabel.text = "\(user.fallowingValue)"
+        avatarImage.sd_setImage(with: URL(string: user.avatarData), completed: nil)
     }
 
     private func configureConstraints() {
@@ -173,13 +180,13 @@ class ProfileTableViewHeader: UIView {
             followingCountLabel.leadingAnchor.constraint(equalTo: joinDateImageView.leadingAnchor),
             followingCountLabel.topAnchor.constraint(equalTo: joinDateImageView.bottomAnchor, constant: 8),
 
-            followingLabel.leadingAnchor.constraint(equalTo: followingCountLabel.trailingAnchor, constant: 3),
+            followingLabel.leadingAnchor.constraint(equalTo: followingCountLabel.trailingAnchor, constant: 6),
             followingLabel.centerYAnchor.constraint(equalTo: followingCountLabel.centerYAnchor),
 
             followerCountLabel.leadingAnchor.constraint(equalTo: followingLabel.trailingAnchor, constant: 10),
             followerCountLabel.centerYAnchor.constraint(equalTo: followingLabel.centerYAnchor),
 
-            followerLabel.leadingAnchor.constraint(equalTo: followerCountLabel.trailingAnchor, constant: 3),
+            followerLabel.leadingAnchor.constraint(equalTo: followerCountLabel.trailingAnchor, constant: 6),
             followerLabel.centerYAnchor.constraint(equalTo: followerCountLabel.centerYAnchor),
 
             sectionStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),

@@ -35,8 +35,11 @@ final class HomeViewModel: ObservableObject {
     }
 
     func getTimeLineTweets() {
-        guard let user = user, user.fallowingIds.count > 0 else { return }
-        DatabaseManager.shared.collectionTweets(getTimeLine: user.fallowingIds).sink { [weak self] completion in
+        guard let user = user, user.fallowingIds.count >= 0 else { return }
+        var updatedFollowingIds = user.fallowingIds
+        updatedFollowingIds.append(user.id)
+
+        DatabaseManager.shared.collectionTweets(getTimeLine: updatedFollowingIds).sink { [weak self] completion in
             switch completion {
             case .finished:
                 break

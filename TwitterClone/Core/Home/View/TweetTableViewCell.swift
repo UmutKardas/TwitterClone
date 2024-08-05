@@ -4,7 +4,7 @@
 //
 //  Created by Hüseyin Umut Kardaş on 29.05.2024.
 //
-
+import SDWebImage
 import UIKit
 
 class TweetTableViewCell: UITableViewCell {
@@ -26,15 +26,13 @@ class TweetTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 15, weight: .bold)
-        label.text = "Umut Kardas"
         return label
     }()
 
     private let usernameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 9, weight: .regular)
-        label.text = "@umtkardas"
+        label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = .systemGray
         return label
     }()
@@ -43,7 +41,6 @@ class TweetTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 16)
-        label.text = "I am ios developer"
         return label
     }()
 
@@ -100,6 +97,13 @@ class TweetTableViewCell: UITableViewCell {
         contentView.addSubview(shareButton)
         configureConstraints()
         configureButtons()
+    }
+
+    func configure(with model: Tweet) {
+        tweetTextLabel.text = model.content
+        displayNameLabel.text = model.author.displayName
+        usernameLabel.text = "@\(model.author.username)"
+        avatarImageView.sd_setImage(with: URL(string: model.author.avatarData))
     }
 
     private func configureConstraints() {

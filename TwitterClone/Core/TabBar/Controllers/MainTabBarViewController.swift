@@ -15,7 +15,7 @@ class MainTabBarViewController: UITabBarController {
 
     private func setupTabBar() {
         let homeView = UINavigationController(rootViewController: HomeViewController())
-        let searchView = UINavigationController(rootViewController: SearchViewController())
+        let searchView = UINavigationController(rootViewController: SearchViewController(viewModel: SearchViewModel()))
         let notificationView = UINavigationController(rootViewController: NotificationsViewController())
         let directMessagesView = UINavigationController(rootViewController: DirectMessagesViewController())
 

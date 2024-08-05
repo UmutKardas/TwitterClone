@@ -28,6 +28,10 @@
 		4C813C862C0D089C00B6496D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C813C852C0D089C00B6496D /* OnboardingViewController.swift */; };
 		4C86C30C2C28989D00D2A209 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C86C30B2C28989D00D2A209 /* RegisterViewController.swift */; };
 		4C86C30E2C2898AD00D2A209 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C86C30D2C2898AD00D2A209 /* LoginViewController.swift */; };
+		8A25A3E72C615C43007C59A9 /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25A3E62C615C43007C59A9 /* SearchTableView.swift */; };
+		8A25A3EA2C615C56007C59A9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25A3E92C615C56007C59A9 /* SearchViewModel.swift */; };
+		8A25A3EC2C615C99007C59A9 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A25A3EB2C615C99007C59A9 /* SearchTableViewCell.swift */; };
+		8A2C6BB22C59889100B310E4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2C6BB12C59889100B310E4 /* ProfileViewModel.swift */; };
 		8A7C6C4F2C52D64F00ABB527 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C6C4E2C52D64F00ABB527 /* HomeViewModel.swift */; };
 		8A8A1F862C55117A003A2BAA /* ProfileFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8A1F852C55117A003A2BAA /* ProfileFormViewController.swift */; };
 		8A8A1F8A2C55166F003A2BAA /* UserModelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8A1F892C55166F003A2BAA /* UserModelConstants.swift */; };
@@ -36,6 +40,8 @@
 		8AA192B32C470D310088C587 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA192B22C470D310088C587 /* LoginViewModel.swift */; };
 		8AA192B62C47115C0088C587 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA192B52C47115C0088C587 /* UIViewController+Extensions.swift */; };
 		8AA689452C485D80003472BF /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA689442C485D80003472BF /* DatabaseManager.swift */; };
+		8AE72AA82C5ECF3E00F0CB21 /* TweetFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE72AA72C5ECF3D00F0CB21 /* TweetFormViewController.swift */; };
+		8AE72AAB2C5ED4C900F0CB21 /* TweetFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE72AAA2C5ED4C900F0CB21 /* TweetFormViewModel.swift */; };
 		FC2629804E00D7F0D5D312AE /* Pods_TwitterClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCF207E726AB004924CF4F8 /* Pods_TwitterClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +71,10 @@
 		4C86C30B2C28989D00D2A209 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4C86C30D2C2898AD00D2A209 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4D2EDCEE4AC7562A4512B702 /* Pods-TwitterClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClone.debug.xcconfig"; path = "Target Support Files/Pods-TwitterClone/Pods-TwitterClone.debug.xcconfig"; sourceTree = "<group>"; };
+		8A25A3E62C615C43007C59A9 /* SearchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
+		8A25A3E92C615C56007C59A9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		8A25A3EB2C615C99007C59A9 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		8A2C6BB12C59889100B310E4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8A7C6C4E2C52D64F00ABB527 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8A8A1F852C55117A003A2BAA /* ProfileFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFormViewController.swift; sourceTree = "<group>"; };
 		8A8A1F892C55166F003A2BAA /* UserModelConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelConstants.swift; sourceTree = "<group>"; };
@@ -73,6 +83,8 @@
 		8AA192B22C470D310088C587 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8AA192B52C47115C0088C587 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		8AA689442C485D80003472BF /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		8AE72AA72C5ECF3D00F0CB21 /* TweetFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFormViewController.swift; sourceTree = "<group>"; };
+		8AE72AAA2C5ED4C900F0CB21 /* TweetFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFormViewModel.swift; sourceTree = "<group>"; };
 		F7B6DDDA671F832E656ADA8F /* Pods-TwitterClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClone.release.xcconfig"; path = "Target Support Files/Pods-TwitterClone/Pods-TwitterClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +183,8 @@
 		4C3E769E2C0B7F3800A8D02E /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				8A25A3E82C615C48007C59A9 /* ViewModel */,
+				8A25A3E52C615C1A007C59A9 /* View */,
 				4C3E76A52C0B7FC200A8D02E /* Controllers */,
 			);
 			path = Search;
@@ -259,6 +273,7 @@
 		4C3E76A92C0B802500A8D02E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8A2C6BB02C59887500B310E4 /* ViewModel */,
 				4C3E76AA2C0B814900A8D02E /* Controllers */,
 				4C3E76AD2C0B857100A8D02E /* View */,
 			);
@@ -350,6 +365,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		8A25A3E52C615C1A007C59A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A25A3EB2C615C99007C59A9 /* SearchTableViewCell.swift */,
+				8A25A3E62C615C43007C59A9 /* SearchTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A25A3E82C615C48007C59A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8A25A3E92C615C56007C59A9 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8A2C6BB02C59887500B310E4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8A2C6BB12C59889100B310E4 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8A7C6C4D2C52D62D00ABB527 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +434,7 @@
 		8AA192B02C4709020088C587 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8AE72AA52C5ECF1C00F0CB21 /* TweetForm */,
 				8A8A1F832C551141003A2BAA /* ProfileForm */,
 				4C3E769D2C0B7F1F00A8D02E /* TabBar */,
 				4C3E769C2C0B7F0200A8D02E /* Home */,
@@ -422,6 +463,31 @@
 				8AA192B52C47115C0088C587 /* UIViewController+Extensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		8AE72AA52C5ECF1C00F0CB21 /* TweetForm */ = {
+			isa = PBXGroup;
+			children = (
+				8AE72AA92C5ED4BA00F0CB21 /* ViewModel */,
+				8AE72AA62C5ECF2400F0CB21 /* Controller */,
+			);
+			path = TweetForm;
+			sourceTree = "<group>";
+		};
+		8AE72AA62C5ECF2400F0CB21 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8AE72AA72C5ECF3D00F0CB21 /* TweetFormViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8AE72AA92C5ED4BA00F0CB21 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8AE72AAA2C5ED4C900F0CB21 /* TweetFormViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,13 +608,17 @@
 				8A8A1F862C55117A003A2BAA /* ProfileFormViewController.swift in Sources */,
 				4C79C9462C0CC73300DB755B /* AppUser.swift in Sources */,
 				8A7C6C4F2C52D64F00ABB527 /* HomeViewModel.swift in Sources */,
+				8A2C6BB22C59889100B310E4 /* ProfileViewModel.swift in Sources */,
+				8AE72AA82C5ECF3E00F0CB21 /* TweetFormViewController.swift in Sources */,
 				4C70ECEE2C2C8ED7002FF802 /* AuthManager.swift in Sources */,
 				4C1A05872C07AF48002D9625 /* SearchViewController.swift in Sources */,
 				4C1A05832C07AF29002D9625 /* MainTabBarViewController.swift in Sources */,
 				4C3E76B02C0B85FD00A8D02E /* ProfileTableViewHeader.swift in Sources */,
 				4C3E76AC2C0B815D00A8D02E /* ProfileViewController.swift in Sources */,
 				4C2ACFBA2C0CF9E500E3B43C /* Tweet.swift in Sources */,
+				8A25A3E72C615C43007C59A9 /* SearchTableView.swift in Sources */,
 				4C86C30C2C28989D00D2A209 /* RegisterViewController.swift in Sources */,
+				8A25A3EC2C615C99007C59A9 /* SearchTableViewCell.swift in Sources */,
 				4C1A056D2C079D55002D9625 /* AppDelegate.swift in Sources */,
 				4C1A05892C07AF58002D9625 /* NotificationsViewController.swift in Sources */,
 				4C3E465D2C2A091500F813E9 /* RegisterViewModel.swift in Sources */,
@@ -560,11 +630,13 @@
 				4C86C30E2C2898AD00D2A209 /* LoginViewController.swift in Sources */,
 				4C813C862C0D089C00B6496D /* OnboardingViewController.swift in Sources */,
 				4C1A058E2C07B52D002D9625 /* TweetTableViewCell.swift in Sources */,
+				8A25A3EA2C615C56007C59A9 /* SearchViewModel.swift in Sources */,
 				8AA192B32C470D310088C587 /* LoginViewModel.swift in Sources */,
 				4C1A05912C07B935002D9625 /* TweetTableViewCellDelegate.swift in Sources */,
 				8AA689452C485D80003472BF /* DatabaseManager.swift in Sources */,
 				8A8A1F8C2C5519CC003A2BAA /* ProfileFormViewModel.swift in Sources */,
 				8A8A1F8E2C558CAB003A2BAA /* StorageManager.swift in Sources */,
+				8AE72AAB2C5ED4C900F0CB21 /* TweetFormViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
