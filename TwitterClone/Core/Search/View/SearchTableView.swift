@@ -56,4 +56,14 @@ extension SearchTableView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedUser = users[indexPath.row]
+
+        if let searchViewController = navigationController?.presentingViewController as? SearchViewController {
+            searchViewController.pushToProfile(with: selectedUser)
+        }
+
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

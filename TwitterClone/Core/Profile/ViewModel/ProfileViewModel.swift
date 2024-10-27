@@ -16,9 +16,8 @@ final class ProfileViewModel {
 
     private var subscriptions = Set<AnyCancellable>()
 
-    func getUser() {
-        guard let id = Auth.auth().currentUser?.uid else { return }
-        DatabaseManager.shared.collectionUser(get: id)
+    func getUser(id userId: String) {
+        DatabaseManager.shared.collectionUser(get: userId)
             .sink { [weak self] completion in
                 if case .failure(let error) = completion {
                     self?.error = error.localizedDescription

@@ -8,8 +8,9 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    private let searchController: UISearchController = {
-        let search = UISearchController(searchResultsController: SearchTableView())
+    let searchController: UISearchController = {
+        let resultsController = SearchTableView()
+        let search = UISearchController(searchResultsController: UINavigationController(rootViewController: resultsController))
         search.searchBar.searchBarStyle = .minimal
         search.searchBar.placeholder = "Search in X"
         return search
@@ -26,10 +27,9 @@ class SearchViewController: UIViewController {
         return label
     }()
 
-    let viewModel: SearchViewModel
+    let viewModel: SearchViewModel = .init()
 
-    init(viewModel: SearchViewModel) {
-        self.viewModel = viewModel
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -54,11 +54,19 @@ class SearchViewController: UIViewController {
             promptLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
+
+    func pushToProfile(with user: AppUser) {
+        let profileViewController = ProfileViewController(userID: user.id)
+        navigationController?.pushViewController(profileViewController, animated: true)
+    }
 }
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let resultsViewController = searchController.searchResultsController as? SearchTableView, let text = searchController.searchBar.text else { return }
+        guard let navigationController = searchController.searchResultsController as? UINavigationController,
+              let resultsViewController = navigationController.topViewController as? SearchTableView,
+              let text = searchController.searchBar.text else { return }
+
         viewModel.searchUser(with: text) { users in
             resultsViewController.updateView(users: users)
         }

@@ -119,7 +119,7 @@ class HomeViewController: UIViewController {
     }
 
     @objc func didTapProfile() {
-        navigationController?.pushViewController(ProfileViewController(), animated: true)
+        navigationController?.pushViewController(ProfileViewController(userID: viewModel.user?.id ?? ""), animated: true)
     }
 }
 

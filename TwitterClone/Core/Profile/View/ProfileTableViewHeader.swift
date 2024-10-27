@@ -31,7 +31,7 @@ class ProfileTableViewHeader: UIView {
     private let profileImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.backgroundColor = .gray
+        image.backgroundColor = UIColor(named: "blueColor")
         image.contentMode = .scaleAspectFill
         return image
     }()
@@ -144,7 +144,7 @@ class ProfileTableViewHeader: UIView {
         displayNameLabel.text = user.displayName
         usernameLabel.text = "@\(user.username)"
         biographyLabel.text = user.biography
-        joinDateLabel.text = "Joined \(user.createdDate)"
+        joinDateLabel.text = "Joined \(user.createdDate.formattedString)"
         followerCountLabel.text = "\(user.fallowerValue)"
         followingCountLabel.text = "\(user.fallowingValue)"
         avatarImage.kf.setImage(with: URL(string: user.avatarData))

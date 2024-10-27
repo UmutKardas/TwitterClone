@@ -22,6 +22,8 @@ class ProfileViewController: UIViewController {
     private let viewModel = ProfileViewModel()
     private var subscriptions = Set<AnyCancellable>()
 
+    var userID: String
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Profile"
@@ -31,7 +33,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileTableView)
         configureConstraints()
         bindView()
-        viewModel.getUser()
+        viewModel.getUser(id: userID)
     }
 
     private func configureConstraints() {
@@ -62,9 +64,10 @@ class ProfileViewController: UIViewController {
         }.store(in: &subscriptions)
     }
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
+    init(userID: String) {
+            self.userID = userID
+            super.init(nibName: nil, bundle: nil) 
+        }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
