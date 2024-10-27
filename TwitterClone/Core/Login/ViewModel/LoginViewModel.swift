@@ -6,7 +6,7 @@
 //
 
 import Combine
-import Firebase
+import FirebaseAuth
 import Foundation
 
 final class LoginViewModel: ObservableObject {

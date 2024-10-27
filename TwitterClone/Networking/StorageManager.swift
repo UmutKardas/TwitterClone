@@ -6,9 +6,8 @@
 //
 
 import Combine
-import CombineFirebaseStorage
-import FirebaseFirestoreSwift
 import FirebaseStorage
+import FirebaseStorageCombineSwift
 import Foundation
 
 class StorageManager {

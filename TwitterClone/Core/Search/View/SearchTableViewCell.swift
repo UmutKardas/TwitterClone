@@ -5,7 +5,7 @@
 //  Created by Hüseyin Umut Kardaş on 5.08.2024.
 //
 
-import SDWebImage
+import Kingfisher
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
@@ -69,7 +69,7 @@ class SearchTableViewCell: UITableViewCell {
     }
 
     func configure(with user: AppUser) {
-        avatarImageView.sd_setImage(with: URL(string: user.avatarData))
+        avatarImageView.kf.setImage(with: URL(string: user.avatarData))
         displayNameLabel.text = user.displayName
         usernameLabel.text = "@\(user.username)"
     }

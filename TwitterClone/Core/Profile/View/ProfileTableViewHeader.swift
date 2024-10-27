@@ -5,7 +5,7 @@
 //  Created by Hüseyin Umut Kardaş on 1.06.2024.
 //
 
-import SDWebImage
+import Kingfisher
 import UIKit
 
 class ProfileTableViewHeader: UIView {
@@ -147,7 +147,7 @@ class ProfileTableViewHeader: UIView {
         joinDateLabel.text = "Joined \(user.createdDate)"
         followerCountLabel.text = "\(user.fallowerValue)"
         followingCountLabel.text = "\(user.fallowingValue)"
-        avatarImage.sd_setImage(with: URL(string: user.avatarData), completed: nil)
+        avatarImage.kf.setImage(with: URL(string: user.avatarData))
     }
 
     private func configureConstraints() {

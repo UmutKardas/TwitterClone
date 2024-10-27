@@ -4,7 +4,7 @@
 //
 //  Created by Hüseyin Umut Kardaş on 29.05.2024.
 //
-import SDWebImage
+import Kingfisher
 import UIKit
 
 class TweetTableViewCell: UITableViewCell {
@@ -103,7 +103,7 @@ class TweetTableViewCell: UITableViewCell {
         tweetTextLabel.text = model.content
         displayNameLabel.text = model.author.displayName
         usernameLabel.text = "@\(model.author.username)"
-        avatarImageView.sd_setImage(with: URL(string: model.author.avatarData))
+        avatarImageView.kf.setImage(with: URL(string: model.author.avatarData))
     }
 
     private func configureConstraints() {

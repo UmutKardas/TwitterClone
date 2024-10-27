@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  TwitterClone
 //
-//  Created by Hüseyin Umut Kardaş on 29.05.2024.
+//  Created by Hüseyin Umut Kardaş on 27.10.2024.
 //
 
 import UIKit

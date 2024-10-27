@@ -5,7 +5,7 @@
 //  Created by Hüseyin Umut Kardaş on 2.06.2024.
 //
 
-import Firebase
+import FirebaseAuth
 import Foundation
 
 struct AppUser: Codable {

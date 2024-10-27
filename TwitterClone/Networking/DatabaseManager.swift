@@ -6,9 +6,9 @@
 //
 
 import Combine
-import CombineFirebaseFirestore
-import Firebase
-import FirebaseFirestoreSwift
+import FirebaseFirestoreCombineSwift
+import FirebaseFirestore
+import FirebaseAuth
 import Foundation
 
 class DatabaseManager {
@@ -29,7 +29,7 @@ class DatabaseManager {
         }.eraseToAnyPublisher()
     }
 
-    func collectionUser(update id: String, updatedFields: [AnyHashable: Any]) -> AnyPublisher<Bool, Error> {
+    func collectionUser(update id: String, updatedFields: [String: Any]) -> AnyPublisher<Bool, Error> {
         return database.collection(usersPath).document(id).updateData(updatedFields).map { _ in
             true
         }.eraseToAnyPublisher()

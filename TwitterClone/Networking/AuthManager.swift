@@ -6,8 +6,8 @@
 //
 
 import Combine
-import CombineFirebaseAuthentication
 import FirebaseAuth
+import FirebaseAuthCombineSwift
 import Foundation
 
 class AuthManager {
@@ -22,6 +22,6 @@ class AuthManager {
     func signIn(email: String, password: String) -> AnyPublisher<User, Error> {
         return Auth.auth().signIn(withEmail: email, password: password)
             .map(\.user)
-            .eraseToAnyPublisher () 
+            .eraseToAnyPublisher()
     }
 }
