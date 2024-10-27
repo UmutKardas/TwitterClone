@@ -65,9 +65,9 @@ class ProfileViewController: UIViewController {
     }
 
     init(userID: String) {
-            self.userID = userID
-            super.init(nibName: nil, bundle: nil) 
-        }
+        self.userID = userID
+        super.init(nibName: nil, bundle: nil)
+    }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
@@ -86,5 +86,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.configure(with: viewModel.tweets![indexPath.row])
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 }
