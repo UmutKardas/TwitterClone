@@ -18,20 +18,20 @@ This project is an attempt to clone Twitter's UI using UIKit, following the MVVM
 
 ## Screenshots
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/ba7063bb-c8de-4e5a-b095-f815eb7a723c" alt="Onboarding" width="23%" style="margin: 1%;">
-    <img src="https://github.com/user-attachments/assets/1f509c74-8960-488e-a935-7887f2a8bdb8" alt="Create Your Account" width="23%" style="margin: 1%;">
-    <img src="https://github.com/user-attachments/assets/841dfd9b-c288-4093-bd81-27b28ca05e06" alt="Fill Data" width="23%" style="margin: 1%;">
-    <img src="https://github.com/user-attachments/assets/184a6617-fc8b-4cde-b2e1-4722cd105663" alt="Login" width="23%" style="margin: 1%;">
+    <img src="https://github.com/user-attachments/assets/ba7063bb-c8de-4e5a-b095-f815eb7a723c" alt="Onboarding" width="30%" style="margin: 1%;">
+    <img src="https://github.com/user-attachments/assets/1f509c74-8960-488e-a935-7887f2a8bdb8" alt="Create Your Account" width="30%" style="margin: 1%;">
+    <img src="https://github.com/user-attachments/assets/841dfd9b-c288-4093-bd81-27b28ca05e06" alt="Fill Data" width="30%" style="margin: 1%;">
 </div>
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/327a4003-e36d-497b-9b8d-3ebc0dd6e69f" alt="Home" width="23%" style="margin: 1%;">
-    <img src="https://github.com/user-attachments/assets/c09d9ca6-937c-44ea-ac41-8b5e5403016b" alt="Tweet" width="23%" style="margin: 1%;">
-    <img src="https://github.com/user-attachments/assets/711e0fec-bd66-4a49-8323-9abe62273d09" alt="Profile" width="23%" style="margin: 1%;">
-    <img src="https://github.com/user-attachments/assets/72a6bce8-5844-4713-aed4-024152a26443" alt="Search" width="23%" style="margin: 1%;">
+    <img src="https://github.com/user-attachments/assets/184a6617-fc8b-4cde-b2e1-4722cd105663" alt="Login" width="30%" style="margin: 1%;">
+    <img src="https://github.com/user-attachments/assets/327a4003-e36d-497b-9b8d-3ebc0dd6e69f" alt="Home" width="30%" style="margin: 1%;">
+    <img src="https://github.com/user-attachments/assets/c09d9ca6-937c-44ea-ac41-8b5e5403016b" alt="Tweet" width="30%" style="margin: 1%;">
 </div>
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/b176ebc8-83eb-405f-8f03-2715e20acab9" alt="Search Profile" width="23%" style="margin: 1%;">
+    <img src="https://github.com/user-attachments/assets/711e0fec-bd66-4a49-8323-9abe62273d09" alt="Profile" width="30%" style="margin: 1%;">
+    <img src="https://github.com/user-attachments/assets/72a6bce8-5844-4713-aed4-024152a26443" alt="Search" width="30%" style="margin: 1%;">
+    <img src="https://github.com/user-attachments/assets/b176ebc8-83eb-405f-8f03-2715e20acab9" alt="Search Profile" width="30%" style="margin: 1%;">
 </div>
 
-## Future Enhancements
-Consider adding more functionality to closely replicate Twitter’s features and improve user interaction.
+## Next Steps
+Plan to enhance user experience by adding features like push notifications, direct messaging, and improved search functionality.
