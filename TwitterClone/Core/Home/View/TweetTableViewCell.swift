@@ -41,6 +41,8 @@ class TweetTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
 
@@ -125,7 +127,6 @@ class TweetTableViewCell: UITableViewCell {
 
             replyButton.leadingAnchor.constraint(equalTo: tweetTextLabel.leadingAnchor),
             replyButton.topAnchor.constraint(equalTo: tweetTextLabel.bottomAnchor, constant: 10),
-            replyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
 
             retweetButton.leadingAnchor.constraint(equalTo: replyButton.trailingAnchor, constant: 30),
             retweetButton.centerYAnchor.constraint(equalTo: replyButton.centerYAnchor),
